@@ -1,0 +1,10 @@
+{
+  "current_water_level": 14.4,
+  "previous_water_level": 13.8,
+  "change": 0.6,
+  "unit": "m",
+  "danger_threshold": 15.0,
+  "warning_threshold": 14.0,
+  "sensor_station": "Langtang Khola Station (ST-01)",
+  "simulated": true
+}

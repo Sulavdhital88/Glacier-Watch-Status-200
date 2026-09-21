@@ -1,0 +1,10 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+node_modules/
+frontend/dist/
+server/data/events.jsonl
+server/data/audit.jsonl
+.DS_Store

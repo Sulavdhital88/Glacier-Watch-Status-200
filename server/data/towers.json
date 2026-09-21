@@ -1,0 +1,92 @@
+[
+  {
+    "id": "TOW-01",
+    "name": "Langtang Khola Station",
+    "operator": "Nepal Telecom",
+    "x_pct": 52.0,
+    "y_pct": 14.0,
+    "radius_pct": 8.0,
+    "zone": "upstream",
+    "est_recipients": 180
+  },
+  {
+    "id": "TOW-02",
+    "name": "Kyanjin Ghyang Upper",
+    "operator": "Ncell",
+    "x_pct": 61.5,
+    "y_pct": 19.5,
+    "radius_pct": 8.5,
+    "zone": "upstream",
+    "est_recipients": 240
+  },
+  {
+    "id": "TOW-03",
+    "name": "Ghora Tabela Valley",
+    "operator": "Nepal Telecom",
+    "x_pct": 47.0,
+    "y_pct": 28.0,
+    "radius_pct": 9.0,
+    "zone": "upstream",
+    "est_recipients": 310
+  },
+  {
+    "id": "TOW-04",
+    "name": "Lama Hotel Riverside",
+    "operator": "Ncell",
+    "x_pct": 43.5,
+    "y_pct": 39.0,
+    "radius_pct": 8.0,
+    "zone": "mid",
+    "est_recipients": 420
+  },
+  {
+    "id": "TOW-05",
+    "name": "Bamboo Gorge",
+    "operator": "Nepal Telecom",
+    "x_pct": 39.0,
+    "y_pct": 49.5,
+    "radius_pct": 8.5,
+    "zone": "mid",
+    "est_recipients": 560
+  },
+  {
+    "id": "TOW-06",
+    "name": "Syabrubesi River Confluence",
+    "operator": "Ncell",
+    "x_pct": 33.0,
+    "y_pct": 60.0,
+    "radius_pct": 10.0,
+    "zone": "mid",
+    "est_recipients": 740
+  },
+  {
+    "id": "TOW-07",
+    "name": "Syabrubesi Bridge Confluence",
+    "operator": "Nepal Telecom",
+    "x_pct": 30.5,
+    "y_pct": 69.0,
+    "radius_pct": 9.5,
+    "zone": "downstream",
+    "est_recipients": 1680
+  },
+  {
+    "id": "TOW-08",
+    "name": "Dhunche Ridge East",
+    "operator": "Ncell",
+    "x_pct": 42.0,
+    "y_pct": 77.0,
+    "radius_pct": 11.0,
+    "zone": "downstream",
+    "est_recipients": 2850
+  },
+  {
+    "id": "TOW-09",
+    "name": "Mailung Riverside Settlement",
+    "operator": "Nepal Telecom",
+    "x_pct": 27.0,
+    "y_pct": 87.5,
+    "radius_pct": 9.0,
+    "zone": "downstream",
+    "est_recipients": 920
+  }
+]

@@ -1,0 +1,51 @@
+@import 'leaflet/dist/leaflet.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    background-color: #F7F1E8;
+    color: #241F1B;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Accessible focus indicators */
+  :focus-visible {
+    outline: 2px solid #B42318;
+    outline-offset: 2px;
+  }
+
+  /* Tabular numbers for live telemetry and timers */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom Leaflet Map Styling */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background-color: #F7F1E8;
+  font-family: inherit;
+}
+
+.leaflet-popup-content-wrapper {
+  background-color: #FFFDF9;
+  color: #241F1B;
+  border-radius: 8px;
+  border: 1px solid #E7DED4;
+  box-shadow: 0 4px 12px rgba(36, 31, 27, 0.08);
+}
+
+.leaflet-popup-tip {
+  background-color: #FFFDF9;
+}

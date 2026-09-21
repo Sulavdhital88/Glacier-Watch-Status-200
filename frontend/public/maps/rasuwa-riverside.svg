@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600" width="1200" height="1600" style="background-color: #080f13;">
+  <defs>
+    <!-- Background subtle gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#071014"/>
+      <stop offset="50%" stop-color="#0a141a"/>
+      <stop offset="100%" stop-color="#050a0d"/>
+    </linearGradient>
+
+    <!-- Glacier Lake Gradient -->
+    <radialGradient id="lakeGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a5f3fc"/>
+      <stop offset="45%" stop-color="#22d3ee"/>
+      <stop offset="85%" stop-color="#0891b2"/>
+      <stop offset="100%" stop-color="#0e7490"/>
+    </radialGradient>
+
+    <!-- River Gradient: High glacier ice to downstream valley -->
+    <linearGradient id="riverGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="25%" stop-color="#06b6d4"/>
+      <stop offset="65%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+
+    <!-- Subtle valley gorge boundary -->
+    <linearGradient id="valleyGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="rgba(6,182,212,0)"/>
+      <stop offset="50%" stop-color="rgba(6,182,212,0.06)"/>
+      <stop offset="100%" stop-color="rgba(6,182,212,0)"/>
+    </linearGradient>
+
+    <!-- Soft Glow Filter -->
+    <filter id="lakeGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="riverGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <!-- Minimal Grid Pattern -->
+    <pattern id="minimalGrid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M 80 0 L 0 0 0 80" fill="none" stroke="rgba(255,255,255,0.02)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- 1. Clean Background Base -->
+  <rect width="1200" height="1600" fill="url(#bgGrad)"/>
+  <rect width="1200" height="1600" fill="url(#minimalGrid)"/>
+
+  <!-- 2. Subtle Valley Gorge Flow Corridor -->
+  <path d="M 660,180 Q 720,280 620,380 T 560,520 T 510,700 T 440,890 T 420,1080 T 430,1260 T 360,1440 T 320,1600
+           L 240,1600 Q 280,1440 330,1260 T 340,1080 T 350,890 T 410,700 T 450,520 T 520,380 T 560,280 Z"
+        fill="url(#valleyGlow)"/>
+
+  <!-- 3. Downstream River Path (Langtang Khola -> Trishuli Basin) -->
+  <!-- Outer ambient river glow -->
+  <path id="riverPath"
+        d="M 610,210 Q 640,290 570,390 T 510,540 T 460,720 T 400,910 T 385,1090 T 395,1270 T 330,1440 T 290,1600"
+        fill="none" stroke="#06b6d4" stroke-width="26" stroke-linecap="round" stroke-linejoin="round" opacity="0.15" filter="url(#riverGlow)"/>
+
+  <!-- Main River Path Stroke -->
+  <path d="M 610,210 Q 640,290 570,390 T 510,540 T 460,720 T 400,910 T 385,1090 T 395,1270 T 330,1440 T 290,1600"
+        fill="none" stroke="url(#riverGrad)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Inner Luminous Water Core -->
+  <path d="M 610,210 Q 640,290 570,390 T 510,540 T 460,720 T 400,910 T 385,1090 T 395,1270 T 330,1440 T 290,1600"
+        fill="none" stroke="#e0f2fe" stroke-width="3.5" stroke-linecap="round" opacity="0.85"/>
+
+  <!-- Directional River Flow Markers -->
+  <g fill="#38bdf8" opacity="0.9">
+    <path d="M 570,440 L 562,458 L 578,458 Z" transform="rotate(28, 570, 450)"/>
+    <path d="M 480,630 L 472,648 L 488,648 Z" transform="rotate(24, 480, 640)"/>
+    <path d="M 425,820 L 417,838 L 433,838 Z" transform="rotate(18, 425, 830)"/>
+    <path d="M 388,1000 L 380,1018 L 396,1018 Z" transform="rotate(8, 388, 1010)"/>
+    <path d="M 390,1180 L 382,1198 L 398,1198 Z" transform="rotate(5, 390, 1190)"/>
+    <path d="M 355,1360 L 347,1378 L 363,1378 Z" transform="rotate(20, 355, 1370)"/>
+    <path d="M 305,1520 L 297,1538 L 313,1538 Z" transform="rotate(14, 305, 1530)"/>
+  </g>
+
+  <!-- 4. MAIN GLACIER LAKE (Source) -->
+  <!-- Ambient Glacial Aura -->
+  <ellipse cx="610" cy="140" rx="140" ry="85" fill="#06b6d4" opacity="0.12" filter="url(#lakeGlow)"/>
+
+  <!-- Glacier Lake Body -->
+  <path d="M 520,110 C 580,75 690,80 725,120 C 750,155 700,195 625,205 C 545,215 480,175 490,140 C 495,120 505,115 520,110 Z"
+        fill="url(#lakeGrad)" stroke="#67e8f9" stroke-width="3" filter="url(#lakeGlow)"/>
+
+  <!-- Inner Lake Water Ripple -->
+  <ellipse cx="610" cy="142" rx="65" ry="32" fill="none" stroke="#e0f2fe" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.6"/>
+
+  <!-- Lake Origin Pulse Dot -->
+  <circle cx="610" cy="142" r="5" fill="#ffffff"/>
+  <circle cx="610" cy="142" r="14" fill="none" stroke="#a5f3fc" stroke-width="1.5" opacity="0.8"/>
+
+  <!-- 5. Minimal Checkpoints Along River Path -->
+  <!-- Checkpoint 0: Glacier Lake Source -->
+  <g transform="translate(750, 140)">
+    <line x1="-15" y1="0" x2="-45" y2="0" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <rect x="0" y="-22" width="280" height="44" rx="6" fill="#0c1a22" stroke="#22d3ee" stroke-width="1.5"/>
+    <text x="14" y="-3" fill="#ffffff" font-family="'Atkinson Hyperlegible', sans-serif" font-size="14" font-weight="bold" letter-spacing="0.5">LIRUNG GLACIER LAKE</text>
+    <text x="14" y="14" fill="#67e8f9" font-family="monospace" font-size="11">SOURCE BASIN • 4,560m • 0 km</text>
+  </g>
+
+  <!-- Checkpoint 1: Kyanjin Valley -->
+  <circle cx="570" cy="390" r="5" fill="#38bdf8" stroke="#ffffff" stroke-width="1.5"/>
+  <g transform="translate(630, 390)">
+    <rect x="0" y="-18" width="220" height="36" rx="5" fill="#0c1a22" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <text x="12" y="-2" fill="#ffffff" font-family="'Atkinson Hyperlegible', sans-serif" font-size="13" font-weight="bold">Kyanjin Valley</text>
+    <text x="12" y="12" fill="#94a3b8" font-family="monospace" font-size="10">3,870m • +4 km • T+12m</text>
+  </g>
+
+  <!-- Checkpoint 2: Ghora Tabela Gorge -->
+  <circle cx="510" cy="540" r="5" fill="#38bdf8" stroke="#ffffff" stroke-width="1.5"/>
+  <g transform="translate(570, 540)">
+    <rect x="0" y="-18" width="220" height="36" rx="5" fill="#0c1a22" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <text x="12" y="-2" fill="#ffffff" font-family="'Atkinson Hyperlegible', sans-serif" font-size="13" font-weight="bold">Ghora Tabela Gorge</text>
+    <text x="12" y="12" fill="#94a3b8" font-family="monospace" font-size="10">3,020m • +11 km • T+28m</text>
+  </g>
+
+  <!-- Checkpoint 3: Lama Hotel Rapids -->
+  <circle cx="460" cy="720" r="5" fill="#38bdf8" stroke="#ffffff" stroke-width="1.5"/>
+  <g transform="translate(520, 720)">
+    <rect x="0" y="-18" width="220" height="36" rx="5" fill="#0c1a22" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <text x="12" y="-2" fill="#ffffff" font-family="'Atkinson Hyperlegible', sans-serif" font-size="13" font-weight="bold">Lama Hotel</text>
+    <text x="12" y="12" fill="#94a3b8" font-family="monospace" font-size="10">2,470m • +18 km • T+45m</text>
+  </g>
+
+  <!-- Checkpoint 4: Syabrubesi Confluence -->
+  <circle cx="385" cy="1090" r="5" fill="#38bdf8" stroke="#ffffff" stroke-width="1.5"/>
+  <g transform="translate(445, 1090)">
+    <rect x="0" y="-18" width="230" height="36" rx="5" fill="#0c1a22" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <text x="12" y="-2" fill="#ffffff" font-family="'Atkinson Hyperlegible', sans-serif" font-size="13" font-weight="bold">Syabrubesi Confluence</text>
+    <text x="12" y="12" fill="#94a3b8" font-family="monospace" font-size="10">1,503m • +28 km • T+75m</text>
+  </g>
+
+  <!-- Checkpoint 5: Betrawati Lowlands -->
+  <circle cx="290" cy="1570" r="5" fill="#38bdf8" stroke="#ffffff" stroke-width="1.5"/>
+  <g transform="translate(350, 1560)">
+    <rect x="0" y="-18" width="220" height="36" rx="5" fill="#0c1a22" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <text x="12" y="-2" fill="#ffffff" font-family="'Atkinson Hyperlegible', sans-serif" font-size="13" font-weight="bold">Betrawati Basin</text>
+    <text x="12" y="12" fill="#94a3b8" font-family="monospace" font-size="10">620m • +45 km • T+120m</text>
+  </g>
+
+  <!-- 6. Minimal Title & Legend Overlay -->
+  <g transform="translate(40, 50)">
+    <rect width="280" height="96" rx="8" fill="#081116" fill-opacity="0.85" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <text x="16" y="26" fill="#f8fafc" font-family="'Barlow Condensed', sans-serif" font-size="18" font-weight="bold" letter-spacing="1">GLACIER-TO-RIVER FLOW PATH</text>
+    
+    <circle cx="24" cy="48" r="5" fill="#22d3ee"/>
+    <text x="38" y="52" fill="#cbd5e1" font-family="'Atkinson Hyperlegible', sans-serif" font-size="12">Lirung Glacial Lake (Source)</text>
+    
+    <line x1="18" y1="72" x2="30" y2="72" stroke="#06b6d4" stroke-width="3.5" stroke-linecap="round"/>
+    <text x="38" y="76" fill="#cbd5e1" font-family="'Atkinson Hyperlegible', sans-serif" font-size="12">Projected GLOF Flow Course</text>
+  </g>
+</svg>

@@ -1,0 +1,46 @@
+[
+  {
+    "id": "HIST-2021-07",
+    "date": "2021-07-14",
+    "lake": "Lirung Glacial Lake",
+    "water_level": 14.4,
+    "visual_state": "RISING",
+    "confidence": 0.95,
+    "earthquake": 4.8,
+    "outcome": "FLOOD",
+    "description": "Rapid moraine breach following seismic tremor and prolonged water level rise."
+  },
+  {
+    "id": "HIST-2019-08",
+    "date": "2019-08-02",
+    "lake": "Lirung Glacial Lake",
+    "water_level": 13.8,
+    "visual_state": "RISING",
+    "confidence": 0.91,
+    "earthquake": 0.0,
+    "outcome": "NO_FLOOD",
+    "description": "Seasonal snowmelt surge safely dissipated through natural spillway channel."
+  },
+  {
+    "id": "HIST-2017-06",
+    "date": "2017-06-28",
+    "lake": "Lirung Glacial Lake",
+    "water_level": 14.5,
+    "visual_state": "RISING",
+    "confidence": 0.93,
+    "earthquake": 4.5,
+    "outcome": "FLOOD",
+    "description": "Sub-surface moraine seepage combined with high water volume triggered secondary outburst."
+  },
+  {
+    "id": "HIST-2015-05",
+    "date": "2015-05-12",
+    "lake": "Lirung Glacial Lake",
+    "water_level": 12.2,
+    "visual_state": "NORMAL",
+    "confidence": 0.94,
+    "earthquake": 2.1,
+    "outcome": "NO_FLOOD",
+    "description": "Nominal post-monsoon baseline conditions."
+  }
+]

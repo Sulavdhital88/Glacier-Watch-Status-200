@@ -1,0 +1,24 @@
+# GlacierWatch Sensor & Situation Thresholds
+# Note: These values are calibrated placeholders for demonstration and must be field-calibrated at the Nepal deployment site.
+
+water_level:
+  unit: "cm"
+  normal_baseline: 120.0
+  watch_threshold: 140.0
+  danger_threshold: 180.0
+  danger_rate_of_rise: 2.0  # cm per minute over a 5-minute rolling window
+
+seismic:
+  unit: "mg"  # peak ground acceleration in milli-g
+  baseline: 2.0
+  tremor_threshold: 15.0   # >= 15 mg is shaking level: tremor
+  strong_threshold: 50.0   # >= 50 mg is shaking level: strong
+
+health:
+  sensor_offline_timeout_seconds: 30
+
+confidence:
+  low_threshold: 0.70
+
+situation:
+  coincidence_window_minutes: 30
