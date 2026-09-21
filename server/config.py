@@ -30,11 +30,11 @@ SERIAL_BAUD = int(os.getenv("SERIAL_BAUD", "2000000"))
 # SMS Gateway Settings
 raw_endpoints = os.getenv(
     "SMS_GATEWAY_ENDPOINTS",
-    "http://10.164.84.222:8082/message,http://192.168.1.170:8082/message,http://10.201.44.172:8082/message"
+    "http://<SMS_GATEWAY_IP>:8082/message"
 )
 SMS_GATEWAY_ENDPOINTS = [ep.strip() for ep in raw_endpoints.split(",") if ep.strip()]
-SMS_AUTH_TOKEN = os.getenv("SMS_AUTH_TOKEN", "6a1fa22d-a984-46cc-8b33-552984bfabdf")
-SMS_RECIPIENT_NUMBER = os.getenv("SMS_RECIPIENT_NUMBER", "+9779761888995")
+SMS_AUTH_TOKEN = os.getenv("SMS_AUTH_TOKEN", "YOUR_SMS_GATEWAY_TOKEN")
+SMS_RECIPIENT_NUMBER = os.getenv("SMS_RECIPIENT_NUMBER", "+97798XXXXXXXX")
 
 DATA_DIR = BASE_DIR / "server" / "data"
 DATA_DIR.mkdir(parents=True, exist_ok=True)

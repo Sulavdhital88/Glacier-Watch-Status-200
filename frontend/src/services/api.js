@@ -65,7 +65,7 @@ export async function getLatestImage() {
   if (cap && cap.image_url) {
     return {
       id: cap.id || 'GW-CAP-001',
-      imageUrl: cap.image_url,
+      imageUrl: `${cap.image_url}?t=${Date.now()}`,
       timestamp: cap.received_at || new Date().toLocaleTimeString(),
       station: 'Station GW-001',
       source: cap.source === 'gear360' ? 'Gear 360' : (cap.filename?.includes('esp') ? 'Gear 360 (ESP32-S3)' : 'Station Camera'),

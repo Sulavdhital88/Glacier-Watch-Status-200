@@ -167,6 +167,14 @@ class EspSerialReceiver:
             with Image.open(filename) as img:
                 img.load()
             print(f"[EspReceiver] Image successfully received & verified: {filename.name} ({image_size} bytes)")
+            
+            # Immediately notify CapturesManager and trigger WebSocket broadcast
+            try:
+                from server.captures import captures_manager
+                captures_manager.create_capture_event(filename, source="gear360")
+                print(f"[EspReceiver] Dispatched {filename.name} to CapturesManager & live WebSocket!")
+            except Exception as cap_err:
+                print(f"[EspReceiver] Error dispatching to CapturesManager: {cap_err}")
         except Exception as e:
             print(f"[EspReceiver] Warning: Pillow decode error on {filename.name}: {e}")
 

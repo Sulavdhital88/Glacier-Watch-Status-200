@@ -319,15 +319,27 @@ class CapturesManager:
             try:
                 if RECEIVED_IMAGES_DIR.exists():
                     for p in list(RECEIVED_IMAGES_DIR.glob("*.jpg")) + list(RECEIVED_IMAGES_DIR.glob("*.jpeg")):
+                        try:
+                            if p.stat().st_size < 1024:
+                                continue
+                        except Exception:
+                            continue
+
                         mtime = p.stat().st_mtime
                         last_mtime = self._processed_files.get(p.name, 0)
-                        if mtime > last_mtime + 0.5:
-                            if wait_for_file_ready(p, timeout_sec=2.0):
+                        if p.name not in self._processed_files:
+                            if wait_for_file_ready(p, timeout_sec=1.0):
                                 self._processed_files[p.name] = mtime
+                                print(f"[CapturesManager] Polling detected new image: {p.name}")
+                                self.create_capture_event(p, source="gear360")
+                        elif mtime > last_mtime + 0.5:
+                            if wait_for_file_ready(p, timeout_sec=1.0):
+                                self._processed_files[p.name] = mtime
+                                print(f"[CapturesManager] Polling detected updated image: {p.name}")
                                 self.create_capture_event(p, source="gear360")
             except Exception as e:
                 print(f"[CapturesManager] Polling error: {e}")
-            time.sleep(1.0)
+            time.sleep(0.5)
 
     def _demo_replay_loop(self):
         """If DEMO_MODE=True and no real image arrived for 60s, replay images every 12s."""
